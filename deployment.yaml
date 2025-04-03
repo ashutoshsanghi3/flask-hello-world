@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myflask-deploy
+  labels:
+    app: myflask-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myflask-deploy
+  template:
+    metadata:
+      labels:
+        app: myflask-deploy
+    spec:
+      containers:
+      - image: ashutoshsanghi/myflaskapp
+        name: myflaskapp
